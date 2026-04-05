@@ -16,27 +16,13 @@ const Room = ({ params }) => {
   if (role === ZegoUIKitPrebuilt.Host || role === ZegoUIKitPrebuilt.Cohost) {
     sharedLinks.push({
       name: "Join as co-host",
-      url:
-        window.location.protocol +
-        "//" +
-        window.location.host +
-        window.location.pathname +
-        "?roomID=" +
-        roomID +
-        "&role=Cohost",
+      url: `${window.location.protocol}//${window.location.host}/room/${roomID}?role=Cohost`,
     });
   }
 
   sharedLinks.push({
     name: "Join as audience",
-    url:
-      window.location.protocol +
-      "//" +
-      window.location.host +
-      window.location.pathname +
-      "?roomID=" +
-      roomID +
-      "&role=Audience",
+    url: `${window.location.protocol}//${window.location.host}/room/${roomID}?role=Audience`,
   });
 
   const myMeeting = async (element) => {
